@@ -17,24 +17,33 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
   padding: 15px 40px;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .logo {
   height: 40px;
 }
 
-.navbar a {
-  margin-left: 20px;
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
   text-decoration: none;
   color: #333;
   font-size: 16px;
 }
 
-.navbar a.active {
+.nav-links a.active {
   font-weight: bold;
   color: #007bff;
 }
@@ -84,7 +93,7 @@ button:hover {
   background-color: #218838;
 }
 
-/* Task List */
+/* Legacy Task List (not used but retained) */
 ul {
   list-style: none;
   padding: 0;
@@ -107,7 +116,6 @@ li span {
   margin-right: 10px;
 }
 
-/* Delete Button */
 li button {
   background-color: #dc3545;
   color: white;
@@ -130,13 +138,47 @@ footer {
   border-top: 1px solid #eee;
 }
 
-.status-select {
-  padding: 6px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+/* Table Layout for Task List */
+#taskTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 30px;
 }
 
+#taskTable th {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+#taskTable td {
+  background-color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  vertical-align: middle;
+}
+
+#taskTable tbody tr:hover td {
+  background-color: #f1f1f1;
+}
+
+/* Status Dropdown */
+.status-select {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  min-width: 120px;
+}
+
+/* Status Styles */
 .status-not-started {
   background-color: #fff3cd;
   color: #856404;
@@ -155,4 +197,20 @@ footer {
 .status-completed {
   background-color: #d4edda;
   color: #155724;
+}
+
+/* Delete Button inside Table */
+#taskTable td button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#taskTable td button:hover {
+  background-color: #c82333;
 }
