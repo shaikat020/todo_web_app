@@ -1,45 +1,64 @@
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
-const taskList = document.getElementById('taskList');
+const taskTableBody = document.querySelector('#taskTable tbody');
 
-// Function to add a task
-function addTask() {
-    const taskText = taskInput.value.trim();
+let tasks = [];
 
-    if (taskText === '') {
-        alert('Please enter a task');
-        return;
-    }
+addTaskBtn.addEventListener('click', () => {
+  const taskText = taskInput.value.trim();
+  if (taskText) {
+    tasks.push({ name: taskText, status: 'Not Started' });
+    taskInput.value = '';
+    renderTasks();
+  }
+});
 
-    // Create a new list item
-    const li = document.createElement('li');
-    const span = document.createElement('span');
-    span.textContent = taskText;
+function renderTasks() {
+  taskTableBody.innerHTML = '';
+  tasks.forEach((task, index) => {
+    const row = document.createElement('tr');
 
-    // Create a delete button
+    // Index Cell
+    const indexCell = document.createElement('td');
+    indexCell.textContent = index + 1;
+
+    // Task Name
+    const taskCell = document.createElement('td');
+    taskCell.textContent = task.name;
+
+    // Status Dropdown
+    const statusCell = document.createElement('td');
+    const select = document.createElement('select');
+    select.className = `status-select status-${task.status.toLowerCase().replace(' ', '-')}`;
+    const statuses = ['Not Started', 'Pending', 'In Progress', 'Completed'];
+    statuses.forEach(status => {
+      const option = document.createElement('option');
+      option.value = status;
+      option.textContent = status;
+      if (task.status === status) option.selected = true;
+      select.appendChild(option);
+    });
+    select.addEventListener('change', () => {
+      task.status = select.value;
+      renderTasks(); // re-render to apply color classes
+    });
+    statusCell.appendChild(select);
+
+    // Action Cell
+    const actionCell = document.createElement('td');
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.onclick = () => {
-        taskList.removeChild(li);
+      tasks.splice(index, 1);
+      renderTasks();
     };
+    actionCell.appendChild(deleteBtn);
 
-    // Append span and delete button to the list item
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
+    row.appendChild(indexCell);
+    row.appendChild(taskCell);
+    row.appendChild(statusCell);
+    row.appendChild(actionCell);
 
-    // Add the new list item to the task list
-    taskList.appendChild(li);
-
-    // Clear the input field
-    taskInput.value = '';
+    taskTableBody.appendChild(row);
+  });
 }
-
-// Event listener for the Add Task button
-addTaskBtn.addEventListener('click', addTask);
-
-// Optional: Press "Enter" to add a task
-taskInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        addTask();
-    }
-});
