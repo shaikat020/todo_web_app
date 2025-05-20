@@ -75,27 +75,4 @@ li button:hover {
     background-color: #d32f2f;
 }
 
-.navbar {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  padding: 10px;
-  background-color: #f0f0f0;
-}
-.logo {
-  height: 40px;
-}
-.navbar a {
-  text-decoration: none;
-  color: #333;
-}
-.navbar a.active {
-  font-weight: bold;
-  color: blue;
-}
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #888;
-}
 
