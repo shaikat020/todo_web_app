@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To-Do App</title>
-  <link rel="stylesheet" href="styles.css" />
+
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
@@ -22,12 +22,12 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container" border="1">
     <h1>To-Do List</h1>
     <input type="text" id="taskInput" placeholder="Add a new task" />
     <button id="addTaskBtn">Add Task</button>
     <!-- inside <main class="container"> -->
-<table id="taskTable">
+<table id="taskTable" border="1">
   <thead>
     <tr>
       <th>No</th>
@@ -37,7 +37,18 @@
     </tr>
   </thead>
   <tbody>
-    <!-- Tasks will appear here -->
+    <tr>
+      <td>1</td>
+      <td>Web Technology Lab report</td>
+      <td>Not Started ✓</td>
+      <td><button>Delete</button></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Microprocessor Lab report</td>
+      <td>Not Started ✓</td>
+      <td><button>Delete</button></td>
+    </tr>
   </tbody>
 </table>
 
@@ -47,6 +58,6 @@
     <p>&copy; 2025 Md. Tahsin Azad Shaikat</p>
   </footer>
 
-  <script src="script.js"></script>
+  
 </body>
 </html>
