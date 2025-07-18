@@ -1,184 +1,9 @@
-/* Reset and Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Custom overrides for Bootstrap */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo {
-  height: 40px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-}
-
-.nav-links a.active {
-  font-weight: bold;
-  color: #007bff;
-}
-
-/* Main Container */
-main.container {
-  flex: 1;
-  padding: 40px;
-  max-width: 800px;
-  width: 100%;
-  margin: auto;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Headings */
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* Input + Button */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #218838;
-}
-
-/* Legacy Task List (not used but retained) */
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-}
-
-li span {
-  flex: 1;
-  margin-right: 10px;
-}
-
-li button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-li button:hover {
-  background-color: #c82333;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  color: #888;
-  border-top: 1px solid #eee;
-}
-
-/* Table Layout for Task List */
-#taskTable {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  margin-top: 30px;
-}
-
-#taskTable th {
   background-color: #f8f9fa;
-  color: #333;
-  padding: 14px;
-  text-align: left;
-  font-weight: 600;
-  border-bottom: 2px solid #dee2e6;
 }
 
-#taskTable td {
-  background-color: #fff;
-  padding: 14px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  vertical-align: middle;
-}
-
-#taskTable tbody tr:hover td {
-  background-color: #f1f1f1;
-}
-
-/* Status Dropdown */
-.status-select {
-  padding: 6px 10px;
-  border-radius: 20px;
-  border: none;
-  font-size: 14px;
-  text-align: center;
-  font-weight: 500;
-  min-width: 120px;
-}
-
-/* Status Styles */
+/* Custom status colors */
 .status-not-started {
   background-color: #fff3cd;
   color: #856404;
@@ -199,18 +24,82 @@ footer {
   color: #155724;
 }
 
-/* Delete Button inside Table */
-#taskTable td button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Custom card shadow for tasks */
+.list-group-item {
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  border-radius: 8px !important;
 }
 
-#taskTable td button:hover {
-  background-color: #c82333;
+.list-group-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Custom width for status dropdown */
+.status-select {
+  min-width: 120px;
+}/* Custom styles to enhance Bootstrap */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Status select styles */
+.status-select {
+  min-width: 120px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-not-started {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeeba;
+}
+
+.status-in-progress {
+  background-color: #cce5ff;
+  color: #004085;
+  border-color: #b8daff;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+/* Task list items */
+.list-group-item {
+  transition: all 0.2s ease;
+  margin-bottom: 6px;
+  border-radius: 8px !important;
+  border-left: 4px solid transparent;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  .card-body {
+    padding: 0;
+  }
+  
+  .list-group-item {
+    padding: 1rem !important;
+  }
+}
+
+/* Custom focus styles */
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.15);
 }
