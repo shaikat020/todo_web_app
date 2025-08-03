@@ -49,4 +49,7 @@ This project is open-source and available under the MIT License.
 
 ## Author
 
-Md. Tahsin Azad Shaikat - Undergraduate Student
+**Md Tahsin Azad Shaikat**
+
+Web developer focused on front-end, back-end, and Django, with supplementary skills in IoT and robotics.
+🔗 [LinkedIn](https://www.linkedin.com/in/mdtahsinazad020/)
