@@ -32,6 +32,7 @@ No installation required! Simply open `index.html` in your web browser.
 4. Delete tasks using the delete button
 
 ## Project Structure
+```
 todo-app/
 ├── index.html # Main application page
 ├── about.html # About page
@@ -41,7 +42,7 @@ todo-app/
 │ ├── favicon.ico
 │ └── logo.png
 └── README.md
-
+```
 
 ## License
 
